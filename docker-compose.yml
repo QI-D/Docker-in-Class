@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  app:
+    build: app
+    ports:
+      - 5000:5000
+
+  web:
+    build: html
+    environment:
+      API_URL: "http://app:5000"
+    ports:
+      - 3000:80
