@@ -3,12 +3,12 @@ version: '3'
 services:
 
   app:
-    build: app
+    image: qidang/4640-app:latest
     ports:
       - 5000:5000
 
   web:
-    build: html
+    image: qidang/4640-web:latest
     environment:
       API_URL: "http://app:5000"
     ports:
